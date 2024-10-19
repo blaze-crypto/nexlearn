@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
+  --secondary-gradient: linear-gradient(135deg, #3b82f6, #60a5fa);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  @apply bg-gray-900 text-white;
+}
+
+.gradient-text {
+  @apply text-transparent bg-clip-text;
+  background-image: var(--primary-gradient);
+}
+
+.gradient-bg {
+  background-image: var(--primary-gradient);
+}
+
+.light-effect {
+  @apply relative overflow-hidden;
+}
+
+.light-effect::before {
+  content: '';
+  @apply absolute inset-0 opacity-30;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 80%);
+  pointer-events: none;
+}
+
+.card {
+  @apply bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300;
+}
